@@ -1,0 +1,65 @@
+<template name="CatchesList">
+  <div class="container">
+    <div class="row searchfield">
+      {{#if catches.count}}
+        {{> SearchBar }}
+        {{> Filters }}
+      {{else}}
+      {{/if}}
+    </div>
+    <div class="row">
+      <div class="grid js-isotope">
+        <div class="grid-sizer"></div>
+        {{#each catches}}
+          <div class="grid-item {{sex}} {{#if released}}released{{/if}}" data-date="{{date}}" data-weight="{{grams}}">
+
+          	<div class="flipper">
+          		<div class="front">
+                {{#if released}}
+                  <div class="ribbon"><span>Satt ut</span></div>
+                {{/if}}
+                <a href="{{pathFor route='Catch'}}">
+                  {{#if image}}
+                  <div class="header" style="background: url('{{thumb}}') no-repeat center center; background-size: cover;">
+                    {{#if sexMale}}<i class="fa fa-mars fa-fw genderIcon"></i>{{/if}}{{#if sexFemale}}<i class="fa fa-venus fa-fw genderIcon"></i>{{/if}}{{#if sexUnknown}}<i class="fa fa-genderless fa-fw genderIcon"></i>{{/if}}
+                  </div>
+                  {{else}}
+                  <div class="header" style="background: url('https://maps.googleapis.com/maps/api/staticmap?center={{location}}&zoom=13&scale=2&size=400x400&maptype=hybrid&key=AIzaSyA0o_0_xldFVJxeGjjcwoHF4ZVSfoWdFIM&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xfa3032%7Clabel:%7C{{location}}') no-repeat center center; background-size: cover;">
+                    {{#if sexMale}}<i class="fa fa-mars fa-fw genderIcon"></i>{{/if}}{{#if sexFemale}}<i class="fa fa-venus fa-fw genderIcon"></i>{{/if}}{{#if sexUnknown}}<i class="fa fa-genderless fa-fw genderIcon"></i>{{/if}}
+                  </div>
+                  {{/if}}
+                </a>
+                <div class="content">
+                  <div class="info">
+                    <div class="species">{{species}}</div>
+                    <div class="date">{{dateCaught}}</div>
+                  </div>
+                  <div class="details">
+                    <div class="river"><i class="fa fa-map-marker fa-fw text-muted"></i>{{river}}{{#if zone}}, {{zone}}{{/if}}</div>
+                    <div><span class="weight">{{weight}}</span> kg {{#if length}}- <span class="length">{{length}} cm</span>{{/if}}</div>
+                    {{#if bait}}<div class="bait">Tatt på: {{bait}}</div>{{/if}}
+            			</div>
+                  <div class="itemfooter">
+                    <a href="{{pathFor route='Catch'}}"><i class="fa fa-eye fa-fw"></i>Se mer</a>
+                    <a href="{{pathFor route='EditCatch'}}"><i class="fa fa-pencil fa-fw"></i>Endre</a>
+
+                  </div>
+                </div>
+          		</div>
+
+          	</div>
+          </div>
+        {{else}}
+          <div class="text-center">
+            <h2>Velkommen, {{currentUser.profile.name}}!</h2>
+            <p>
+              Er du klar til å legge inn fangsten din? Etter hvert som legger til fisker i fiskeloggen, vil de vise her.
+            </p>
+            <a href="{{pathFor route='InsertCatch'}}" class="btn btn-lg btn-primary">Legg til første fangst</a>
+          </div>
+
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

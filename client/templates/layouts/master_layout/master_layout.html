@@ -1,0 +1,9 @@
+<template name="MasterLayout">
+  {{#if currentUser}}
+    {{> Nav}}
+  {{/if}}
+  <main>
+    {{> yield}}
+  </main>
+  {{> Footer}}
+</template>

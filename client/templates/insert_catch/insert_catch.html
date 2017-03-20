@@ -1,0 +1,41 @@
+<template name="InsertCatch">
+  <div class="container">
+    <div class="row">
+      {{#autoForm collection="Catches" id="insertCatchForm" type="insert"}}
+        <div class="col-md-12">
+          {{> afQuickField name='location'}}
+        </div>
+        <div class="col-sm-6">
+          {{> afQuickField name='dateCaught'}}
+          {{> afQuickField name='species'}}
+          {{> afQuickField name='river'}}
+          {{> afQuickField name='zone'}}
+          {{> afQuickField name='weight'}}
+          {{> afQuickField name='length'}}
+          {{> afQuickField name='bait'}}
+          {{> afQuickField name='line'}}
+        </div>
+        <div class="col-sm-6">
+          {{> afQuickField name='timeCaught'}}
+          {{> afQuickField name='water'}}
+          {{> afQuickField name='temperature'}}
+          {{> afQuickField name='sex'}}
+          {{> afQuickField name='wild'}}
+          {{> afQuickField name='released'}}
+          <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-percent"></span>
+            </div>
+          </div>
+          {{> afQuickField name='image'}}
+        </div>
+        <div class="col-md-12">
+          {{> afQuickField name='comments'}}
+          <div class="text-center">
+            <button type="submit" class="btn btn-lg btn-labeled btn-success"><span class="btn-label"><i class="fa fa-check"></i></span> Legg til fangst</button>
+          </div>
+        </div>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

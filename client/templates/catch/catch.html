@@ -1,0 +1,58 @@
+<template name="Catch">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ol class="breadcrumb">
+          <li><i class="fa fa-chevron-left"></i> <a href="{{pathFor route='Home'}}">Tilbake til oversikten</a></li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-xs-12">
+
+        {{#if image}}
+          <img src="{{image}}" class="img-responsive">
+        {{else}}
+          <div class="map-container">
+            {{> googleMap name="exampleMap" options=exampleMapOptions}}
+          </div>
+        {{/if}}
+      </div>
+      <div class="col-md-4 col-xs-12 liste">
+
+        <ul class="list-group">
+          {{#if released}}
+            <div class="ribbon"><span>Satt ut</span></div>
+          {{/if}}
+          <li class="list-group-item"><span>Art:</span> {{species}} {{#if sexMale}}<i class="fa fa-mars fa-fw"></i>{{/if}}{{#if sexFemale}}<i class="fa fa-venus fa-fw"></i>{{/if}}{{#if sexUnknown}}<i class="fa fa-genderless fa-fw"></i>{{/if}} - {{wild}}</li>
+          <li class="list-group-item"><span>Sted:</span> {{river}}</li>
+          {{#if zone}}<li class="list-group-item"><span>Vald:</span> {{zone}}</li>{{/if}}
+          <li class="list-group-item"><span>Dato:</span> {{dateCaught}}{{#if timeCaught}}, {{timeCaught}}{{/if}}</li>
+          <li class="list-group-item"><span>Vekt:</span> {{weight}} kg</li>
+          <li class="list-group-item"><span>Lengde:</span> {{length}} cm</li>
+          {{#if bait}}<li class="list-group-item"><span>Tatt på:</span> {{bait}}</li>{{/if}}
+          {{#if line}}<li class="list-group-item"><span>Flueline:</span> {{line}}</li>{{/if}}
+          {{#if water}}<li class="list-group-item"><span>Vannstand:</span> {{water}}</li>{{/if}}
+          {{#if temperature}}<li class="list-group-item"><span>Vanntemperatur:</span> {{temperature}} &#8451;</li>{{/if}}
+          {{#if comments}}<li class="list-group-item"><i class="fa fa-comment-o"></i> {{comments}}</li>{{/if}}
+        </ul>
+        <div class="text-center">
+          <a class="btn btn-primary" href="{{pathFor route='EditCatch'}}"><i class="fa fa-pencil fa-fw"></i> Endre</a>
+          {{#unless image}}
+          <hr>
+          <div class="well">Du har ikke lastet opp bilde av denne fangsten. Hvorfor ikke <a href="{{pathFor route='EditCatch'}}">gjøre det nå?</a></div>
+          {{/unless}}
+        </div>
+      </div>
+    </div>
+    {{#if image}}
+    <div class="row mapRow">
+      <div class="col-xs-12">
+        <div class="map-container">
+          {{> googleMap name="exampleMap" options=exampleMapOptions}}
+        </div>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</template>

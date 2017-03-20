@@ -1,0 +1,44 @@
+<template name="Home">
+  <div class="container-fluid" id="imageheader">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 col-xs-12 text-center">
+        <img src="img/fisk-hvit.svg" class="fiskelogg-logo">
+        <h1 class="heading">Fiskelogg.no</h1>
+        <h3 class="heading">Din fiskedagbok på nettet</h3>
+        <a class="btn btn-primary btn-lg home-buttons" href="{{ pathFor 'atSignIn' }}"><i class="fa fa-sign-in"></i> Logg inn</a>
+        <a class="btn btn-primary btn-lg home-buttons" href="{{ pathFor 'atSignUp' }}"><i class="fa fa-user"></i> Opprett konto</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="intro">
+
+
+
+      <div class="row row-items">
+        <div class="col-sm-4 text-center">
+          <span class="circle">
+            <i class="fa fa-pencil"></i>
+          </span>
+          <h3 class="heading">Loggfør fangsten din</h3>
+          <p>Legg inn art, sted på kart, vekt, lengde, agn, dato og andre kommentarer til fisken du får. Etterpå kan du sortere og filtrere resultatene.</p>
+        </div>
+        <div class="col-sm-4 text-center">
+          <span class="circle">
+            <i class="fa fa-picture-o"></i>
+          </span>
+          <h3 class="heading">Last opp bilder</h3>
+          <p>Har du bilde av fisken du fikk, kan du enkelt laste opp bilder, både fra PC og mobil. All informasjon er selvsagt helt privat.</p>
+        </div>
+        <div class="col-sm-4 text-center">
+          <span class="circle">
+            <i class="fa fa-user"></i>
+          </span>
+          <h3 class="heading">Helt gratis!</h3>
+          <p>Fiskelogg.no er helt gratis. Det eneste du må gjøre før du kan ta den i bruk, er å registrere deg og logge inn. Vi vil ikke sende deg e-post du ikke har takket ja til.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</template>

@@ -1,0 +1,41 @@
+<template name="Filters">
+  <div class="col-md-7 col-xs-12" id="sortAndFilter">
+    <div id="sorts" class="btn-group" data-toggle="buttons">
+      <button type="button" class="btn btn-sm btn-primary disabled" aria-label="Left Align">
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </button>
+      <label data-sort-by="date" class="btn btn-sm btn-primary active" data-toggle="tooltip" data-placement="bottom" title="Sorter etter dato">
+        <input type="radio" name="options" autocomplete="off" checked> Dato
+      </label>
+      <label data-sort-by="weight" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="bottom" title="Sorter etter vekt">
+        <input type="radio" name="options" autocomplete="off"> Vekt
+      </label>
+      <label data-sort-by="river" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="bottom" title="Sorter etter sted">
+        <input type="radio" name="options" autocomplete="off"> Sted
+      </label>
+      <label data-sort-by="species" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="bottom" title="Sorter etter art">
+        <input type="radio" name="options" autocomplete="off"> Art
+      </label>
+    </div>
+    <div id="filter" class="btn-group" data-toggle="buttons">
+      <button type="button" class="btn btn-sm btn-primary disabled" aria-label="Left Align">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </button>
+      <label data-filter="*" class="btn btn-sm btn-primary active" data-toggle="tooltip" data-placement="bottom" title="Vis alle">
+        <input type="radio" name="options" autocomplete="off"> Alle
+      </label>
+      <label data-filter=".Hankjønn" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="bottom" title="Vis hankjønn">
+        <input type="radio" name="options" autocomplete="off"> <i class="fa fa-mars fa-fw bold"></i>
+      </label>
+      <label data-filter=".Hunkjønn" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="bottom" title="Vis hunkjønn">
+        <input type="radio" name="options" autocomplete="off"> <i class="fa fa-venus fa-fw bold"></i>
+      </label>
+      <label data-filter=".Ukjent" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="bottom" title="Vis ukjent kjønn">
+        <input type="radio" name="options" autocomplete="off"> <i class="fa fa-genderless fa-fw bold"></i>
+      </label>
+      <label data-filter=".released" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="bottom" title="Vis gjenutsatte">
+        <input type="radio" name="options" autocomplete="off"> Gjenutsatt
+      </label>
+    </div>
+  </div>
+</template>

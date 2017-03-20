@@ -1,0 +1,42 @@
+<!-- NAV TEMPLATE -->
+<template name="Nav">
+  <nav class="navbar navbar-default navbar-fiskelogg">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand fiskelogg" href="{{pathFor route='Home'}}"><img src="img/fisk-hvit.svg" class="navLogo">Fiskelogg.no</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        {{#if currentUser}}
+          <ul class="nav navbar-nav navbar-right">
+            <li class="{{#if currentRouteIs 'Home'}}active{{/if}}"><a href="{{pathFor route='Home'}}"><span class="badge">{{catches.count}}</span> Din fangst</a></li>
+            <li class="{{#if currentRouteIs 'InsertCatch'}}active{{/if}}"><a href="{{pathFor route='InsertCatch'}}"><i class="fa fa-plus"></i> Legg til</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> {{currentUser.profile.name}} <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ pathFor 'atChangePwd' }}"><i class="fa fa-lock"></i> Endre passord</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="{{ pathFor 'signOut' }}"><i class="fa fa-sign-out"></i> Logg ut</a></li>
+              </ul>
+            </li>
+            {{#if isInRole 'admin'}}
+              <li><a href="/admin" target="_blank">Admin</a></li>
+            {{/if}}
+          </ul>
+        {{else}}
+          <ul class="nav navbar-nav navbar-right">
+            <li class="{{#if currentRouteIs 'atSignIn'}}active{{/if}}"><a href="{{ pathFor 'atSignIn' }}"><i class="fa fa-sign-in"></i> Logg inn</a></li>
+            <li class="{{#if currentRouteIs 'atSignUp'}}active{{/if}}"><a href="{{ pathFor 'atSignUp' }}"><i class="fa fa-user"></i> Opprett konto</a></li>
+          </ul>
+        {{/if}}
+      </div>
+    </div>
+  </nav>
+</template>
