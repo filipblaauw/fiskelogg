@@ -1,3 +1,4 @@
+/*
 Router.plugin('seo', {
   defaults: {
     title: 'Fiskelogg.no',
@@ -17,5 +18,6 @@ Router.plugin('seo', {
     }
   }
 });
+*/
 
 GoogleMaps.load({ v: '3', key: 'AIzaSyA0o_0_xldFVJxeGjjcwoHF4ZVSfoWdFIM', libraries: 'geometry,places' });
