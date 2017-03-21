@@ -248,6 +248,8 @@ main
     text-align: center
     text-transform: uppercase
     font-size: .9em
+    +for_breakpoint(mobile)
+      display: none
 
     a, a:visited
       color: #777
@@ -278,7 +280,7 @@ main
     .details
       font-size: 1em
       +for_breakpoint(mobile)
-        font-size: .9em
+        font-size: .8em
 
     +for_breakpoint(mobile)
       padding: 5px

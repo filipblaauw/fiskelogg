@@ -10,7 +10,7 @@ Template.CatchesList.events({});
 Template.CatchesList.helpers({
 
   catches: function() {
-    return Catches.find({createdBy: Meteor.userId()});
+    return Catches.find({createdBy: Meteor.userId()}, {sort: {dateCaught: -1}});
   },
   id: function() {
     return this._id;
@@ -161,7 +161,7 @@ Template.CatchesList.onRendered(function() {
       });
   */
     });
-  }, 1000)
+  }, 2000)
 
 
 });

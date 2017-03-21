@@ -29,7 +29,7 @@
           {{#if zone}}<li class="list-group-item"><span>Vald:</span> {{zone}}</li>{{/if}}
           <li class="list-group-item"><span>Dato:</span> {{dateCaught}}{{#if timeCaught}}, {{timeCaught}}{{/if}}</li>
           <li class="list-group-item"><span>Vekt:</span> {{weight}} kg</li>
-          <li class="list-group-item"><span>Lengde:</span> {{length}} cm</li>
+          {{#if length}}<li class="list-group-item"><span>Lengde:</span> {{length}} cm</li>{{/if}}
           {{#if bait}}<li class="list-group-item"><span>Tatt på:</span> {{bait}}</li>{{/if}}
           {{#if line}}<li class="list-group-item"><span>Flueline:</span> {{line}}</li>{{/if}}
           {{#if water}}<li class="list-group-item"><span>Vannstand:</span> {{water}}</li>{{/if}}
@@ -40,7 +40,7 @@
           <a class="btn btn-primary" href="{{pathFor route='EditCatch'}}"><i class="fa fa-pencil fa-fw"></i> Endre</a>
           {{#unless image}}
           <hr>
-          <div class="well">Du har ikke lastet opp bilde av denne fangsten. Hvorfor ikke <a href="{{pathFor route='EditCatch'}}">gjøre det nå?</a></div>
+          <div class="well">Du har ikke lastet opp bilde av denne fangsten. Et kart av fangstplassen blir brukt i stedet. Hvorfor ikke <a href="{{pathFor route='EditCatch'}}">laste opp et bilde?</a></div>
           {{/unless}}
         </div>
       </div>
